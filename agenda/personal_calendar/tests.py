@@ -35,4 +35,3 @@ class TestEvent_Part(TestCase):
         evnt_part.save()
         evnt = Event_Part.objects.get(event=event, partner=partner)
         self.assertEqual(evnt.status, 1)
-
