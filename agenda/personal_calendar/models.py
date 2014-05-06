@@ -1,3 +1,29 @@
+# -*- coding : utf-8 -*-
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+## Enum :
+status_choice = (
+    (0, "host"),
+    (1, "visitor"),
+    (2, "old")
+)
+
+##
+
+
+class Event(models.Model):
+    name = models.CharField(max_length=250)
+    desc = models.TextField()
+    partners = models.ManyToManyField(
+        User,
+        through="Event_Part",
+        )
+    date = models.DateTimeField()
+    city = models.TextField()
+
+
+class Event_Part(models.Model):
+    event = models.ForeignKey(Event)
+    partner = models.ForeignKey(User)
+    status = models.IntegerField(choices=status_choice)
