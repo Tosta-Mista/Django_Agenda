@@ -13,6 +13,9 @@ status_choice = (
 
 
 class Event(models.Model):
+    """
+    This class include all info about an event.
+    """
     name = models.CharField(max_length=250)
     desc = models.TextField()
     partners = models.ManyToManyField(
