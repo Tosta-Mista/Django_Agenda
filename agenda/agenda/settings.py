@@ -94,4 +94,4 @@ TEMPLATE_DIRS = (
 
 
 # Login settings :
-LOGIN_REDIRECT_URL = '/'
+#LOGIN_REDIRECT_URL = '/'
