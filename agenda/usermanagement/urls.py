@@ -7,7 +7,7 @@ from views import create_account
 
 urlpatterns = patterns('',
     # Login urls :
-    url(r'^login/$', login, {'template_name':'usermanagement/login'}),
+    url(r'^login/$', login, {'template_name':'usermanagement/login.html'}),
     url(r'^logout/$', logout, {'next_page':'/user/login'}),
 
     # Account management urls :
