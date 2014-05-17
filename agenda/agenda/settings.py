@@ -95,4 +95,6 @@ TEMPLATE_DIRS = (
 
 
 # Login settings :
-#LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL = "/user/login/"
+LOGIN_REDIRECT_URL = "/user/profile/"

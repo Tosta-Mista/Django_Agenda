@@ -23,7 +23,7 @@ class TestEvent_Part(TestCase):
         city= "Somewhere"
                      )
         event.save()
-        event = Event.objects.get(nom="A new Event")
+        event = Event.objects.get(name="A new Event")
         self.assertEqual(event.city, u'Somewhere')
 
     def test_create_event_partners(self):
