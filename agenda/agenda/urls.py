@@ -12,6 +12,10 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    # Usermanagement urls
+    url(r'^user/', include('usermanagement.urls')),
+
+    # Agenda urls
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout, {'next_page':'/accounts/login/'}),
     url(r'^accounts/profile/$', login_required(TemplateView.as_view(template_name="registration/profile.html"))),
