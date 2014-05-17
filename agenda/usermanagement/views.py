@@ -5,7 +5,11 @@ from django.http import HttpResponseRedirect
 
 
 def create_account(request):
-    form = UserCreationForm()
-    return render(request, 'user/create.html', {'form':form})
-
-
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/user/succes/')
+        else:
+            form = UserCreationForm()
+        return render(request, 'user/create.html', {'form':form})
