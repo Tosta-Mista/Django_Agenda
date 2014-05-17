@@ -1,4 +1,4 @@
 Django_Agenda
 =============
 
-An agenda write in python django.
+An agenda writen in python django.
