@@ -16,7 +16,7 @@ class Event(models.Model):
     """
     This class include all info about an event.
     """
-    name = models.CharField(max_length=250)
+    name = models.CharField(max_length=250, unique=True)
     desc = models.TextField()
     partners = models.ManyToManyField(
         User,
@@ -30,3 +30,5 @@ class Event_Part(models.Model):
     event = models.ForeignKey(Event)
     partner = models.ForeignKey(User)
     status = models.IntegerField(choices=status_choice)
+    class Meta:
+        unique_together = ("event", "partner")

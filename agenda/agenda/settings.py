@@ -90,7 +90,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Template directory : related path
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
+    '/templates/'
+    #os.path.join(BASE_DIR, 'templates'),
 )
 
 
