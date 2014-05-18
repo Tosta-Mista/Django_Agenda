@@ -6,5 +6,23 @@
         {% for event in object_list %}
         {% endfor %}
     </ul>
+    <p>
+        {% if page_obj.has_previous %}
+            <a href="?page{{ page_obj.previous_page_number }}">prev.</a>
+        {% endif %}
+            Page {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+        {% if page_obj.has_next %}
+            <a href="?page{{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </p>
     <p><a href="/agenda/create/">Create an event</a></p>
 {% endblock content %}
+{% block right_menu %}
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="list-group">
+                <a href="{% url 'agenda_list' %}" class="list-group-item active">Event List</a>
+                <a href="#" class="list-group-item">Create an Event</a>
+                <a href="#" class="list-group-item">Delete an Event</a>
+            </div>
+        </div><!--/span-->
+{% endblock %}
